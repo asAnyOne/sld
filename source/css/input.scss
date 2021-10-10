@@ -1,0 +1,14 @@
+input[type=text],input[type=email],input[type=tel],
+textarea{appearance: none;}
+.input{
+    border-radius: 0 !important;
+    width: 100%;
+    display: block;
+    padding: 0 20px;
+    &.focus{}
+    &.err{}
+}
+textarea.input{
+    resize: none;
+    padding: 0;
+}

@@ -1,0 +1,188 @@
+header{
+    padding: 29px 0 33px 0;
+    @media (max-width:$md2+px){
+        padding: 18px 0 13px 0; 
+        position: fixed;
+        z-index: 3; 
+        background-color: ivory;
+        width: 100%;
+    }
+}
+.header-top {
+    @include flexbox();
+    justify-content: space-between;
+    @media (max-width:$md2+px) {
+        justify-content: end;
+       }
+}
+.header-top-lang {
+    @include flexbox();
+    @media (max-width:$md2+px) {
+        margin: 0 0 15px 0;        
+    } 
+}
+.header-top-lang__item {
+    /* Text styles for "EN " */
+/* 
+Text styles for "EN "
+ */
+ display: block;
+font-family: Bebas Neue;
+font-size: 14px;
+line-height: 22px;
+text-transform: uppercase;
+letter-spacing: 0.12em;
+color: #000;
+padding: 0 4px;
+margin: 0 10px 0 0;
+&.active{
+color: #ffffff;
+background-color: #000;
+height: 20px;}
+/* Text styles for "RUESP" */
+/* 
+Text styles for "RUESP"
+
+text-decoration: underline;
+color: #000000; */
+}
+.header-top__link {
+font-family: 'AkzidenzGrotesk';
+text-decoration: underline; 
+font-size: 15px;
+line-height: 25px;
+text-transform: uppercase;
+color: #000000;
+position: relative;
+z-index: 3;
+@media (max-width:$md2+px){
+    font-size: 11px;
+line-height: 15px;
+}
+
+}
+.header-bottom {
+    @include flexbox();
+    align-items: center;
+    @media (max-width:$md2+px) {
+    margin: -25px 0 0 0;
+    }
+}
+.header-bottom__column {
+    flex: 0 0 33.3333%;
+}
+.header-bottom-menu {
+    &--right{
+        .header-bottom-menu-list{
+            @include flexbox();
+            justify-content: flex-end;            
+            li{            
+            @media (max-width:$md1+px){margin: 0 0 0 20px !important;}
+                   
+               }            
+            @media (max-width:$md2+px) {
+                display: block;
+                text-align: left;
+                li{margin: 0 0 15px 0 !important;
+                   &:last-child{margin: 0;}
+                }
+            }
+        }
+    }
+}
+.header-bottom-menu-list {
+    @include flexbox();
+    li{margin: 0 35px 0 0;
+       &:last-child{margin: 0;}
+       @media (max-width:$md1+px) {margin: 0 20px 0 0;}       
+  }
+  @media (max-width:$md2+px) {
+     display: block;
+     li{margin: 0px 0 15px 0 !important;
+        &:last-child{margin: 0;}
+     }
+    }
+
+}
+.header-bottom-menu__link {
+font-family: 'AkzidenzGrotesk';
+font-size: 15px;
+text-transform: uppercase;
+letter-spacing: 0.15em;
+color: #000000;
+}
+.header__logo {
+    display: block;
+    text-align: center;
+    @media (max-width:$md2+px) {
+        position: relative;
+        z-index: 3;
+    }
+}
+.header-bottom__text {
+    /* Text styles for "NY" */
+display: block;
+font-family: Bebas;
+font-size: 10px;
+text-transform: uppercase;
+letter-spacing: 1.0em;
+color: #000000;
+    /* Text styles for "C'S" */
+.cs{letter-spacing: 0.34em;}
+@media (max-width:$md2+px) {
+    font-size: 8px;
+    letter-spacing: 0.8em;
+    .cs{letter-spacing: 0.28em;}
+}
+}
+.header-bottom__image {
+    margin: 13px 0px 22px 0;
+    display: inline-block;
+    @media (max-width:$md2+px) {
+        margin: 4px 0 7px 0;
+        img{width: 150px;}
+        
+    }
+}
+.header-menu__icon{
+    display: none;
+}
+@media (max-width:$md2+px) {
+ .header-menu__icon{
+    display: block;
+    position: fixed;
+    top: 28px;
+    left: 10px;
+    width: 30px;
+    height: 18px;
+    margin: 0 0 20px 0;
+    cursor: pointer;
+    z-index: 5;
+    span{@include anim(0.3s,0s);top: 8px;left: 0;position: absolute;
+         width: 100%;height: 2px;background-color: #000;
+         &:first-child{top: 0;}
+         &:last-child{top: auto;bottom: 0;}
+        }
+    &.active{
+        span{@include scale(0);
+             &:first-child{@include rotate(-45deg);top: 8px;}
+             &:last-child{@include rotate(45deg);bottom: 8px;}
+            }
+    }    
+  }
+.header-menu{
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: -100%;
+      overflow: auto;
+      background: #fff;
+      padding: 60px 10px 20px 10px;
+      @include anim(0.6s,0s);
+      &.active{
+          left: 0;
+          z-index: 2;
+      }
+  }
+}
